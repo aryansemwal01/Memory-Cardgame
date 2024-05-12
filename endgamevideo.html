@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Card Game with Background Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Video element with autoplay and loop -->
+    <video autoplay muted>
+        <source src="/Users/aryansemwal/Downloads/Skeleton win.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Include your JavaScript file -->
+    <script src="your_script.js"></script>
+</body>
+</html>

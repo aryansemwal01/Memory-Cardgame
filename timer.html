@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Timer</title>
+</head>
+<body>
+
+<div id="timer"></div>
+
+<script>
+// Set the time for the timer in seconds
+var totalTime = 60; // Change this value to set the desired time in seconds
+
+function startTimer() {
+  var timerElement = document.getElementById('timer');
+
+  var timer = setInterval(function() {
+    // Calculate minutes and seconds
+    var minutes = Math.floor(totalTime / 60);
+    var seconds = totalTime % 60;
+
+    // Display the timer
+    timerElement.innerHTML = minutes + 'm ' + seconds + 's';
+
+    // Check if the timer has reached zero
+    if (totalTime <= 0) {
+      clearInterval(timer); // Stop the timer
+      timerElement.innerHTML = 'Time expired!';
+    } else {
+      totalTime--; // Decrement the total time
+    }
+  }, 1000); // Update the timer every 1000 milliseconds (1 second)
+}
+
+// Start the timer when the page loads
+startTimer();
+</script>
+
+</body>
+</html>
